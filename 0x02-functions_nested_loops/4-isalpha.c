@@ -1,8 +1,9 @@
 #include "main.h"
 
-/*main 
- *Returns 1 if c is a letter, lowercase or uppercase
- *Returns 0 otherwise
+/**
+ *_isalpha - checks if a character is a letter
+ *@c: character to check
+ *Return: 1 if c is a letter (uppercase or lowercase), otherwise 0
  */
 
 int _isalpha(int c)
