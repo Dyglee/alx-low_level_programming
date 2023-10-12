@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 /**
  * main - Prints numbers from 1 to 100. For multiples of three, prints "Fizz"
  * instead of the number, for multiples of five, it prints "Buzz", and for
@@ -8,7 +9,10 @@
  */
 	int main(void)
 	{
-	for (int n = 1; n <= 100; n++)
+
+	int n;
+
+	for (n = 1; n <= 100; n++)
 	{
 		if (n % 3 == 0 && n % 5 == 0)
 		{
