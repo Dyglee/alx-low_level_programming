@@ -1,33 +1,41 @@
 #include "main.h"
 
 /**
- * checker - Check if a string segment is a palindrome
- * @start: Pointer to the start of the segment
- * @last: Pointer to the end of the segment
- * Return: 1 if the segment is a palindrome, otherwise 0
+ * get_length - recursively determines the length of a string
+ * @s: The string to check
+ * Return: length of the string
  */
-int checker(char *start, char *last)
+int get_length(char *s)
 {
-	if (start > last)
-		return (1);
-	if (*start != *last)
+	if (*s == '\0')
 		return (0);
-	return (checker(start + 1, last - 1));
+	return (1 + get_length(s + 1));
 }
 
 /**
- * is_palindrome - Determines if a string is a palindrome
- * @s: The string to check
- * Return: 1 if the string is a palindrome, otherwise 0
+ * checker - recursively check if string segment is palindrome
+ * @s: the string
+ * @start: index for start of string
+ * @end: index for end of string
+ * Return: 1 if segment is palindrome, otherwise 0
+ */
+int checker(char *s, int start, int end)
+{
+	if (start >= end)
+		return (1);
+	if (s[start] != s[end])
+		return (0);
+	return (checker(s, start + 1, end - 1));
+}
+
+/**
+ * is_palindrome - determines if string is palindrome using recursion
+ * @s: the string
+ * Return: 1 if string is palindrome, otherwise 0
  */
 int is_palindrome(char *s)
 {
-	char *last = s;
+	int len = get_length(s);
 
-	while (*last)
-		last--;
-	last--;
-
-	return (checker(s, last));
+	return (checker(s, 0, len - 1));
 }
-
