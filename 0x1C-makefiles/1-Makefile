@@ -1,21 +1,7 @@
-# Compiler to be used
-CC := gcc
+# Makefile Using Variables
 
-# Source files
+CC := gcc
 SRC := main.c school.c
 
-# Name of the executable
-EXECUTABLE := school
-
-# Default rule
-all: $(EXECUTABLE)
-
-# Rule to build the executable
-$(EXECUTABLE): $(SRC)
-	$(CC) $(SRC) -o $(EXECUTABLE)
-
-# Rule to clean up generated files
-clean:
-	rm -f $(EXECUTABLE)
-
-.PHONY: all clean
+all:
+	$(CC) $(SRC) -o school
