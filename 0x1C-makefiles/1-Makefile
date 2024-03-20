@@ -1,4 +1,3 @@
-# Makefile Using Variables
 
 CC := gcc
 SRC := main.c school.c
